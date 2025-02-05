@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        // Lietotaja ievade
+        System.out.print("Ievadiet savu vārdu: ");
+        String vards = scan.nextLine();
+
+        System.out.print("Ievadiet savu vecumu: ");
+        int vecums = scan.nextInt();
+        scan.nextLine();
+
+        System.out.print("Ievadiet savu augumu metros: ");
+        String augums_str = scan.nextLine().replace(",", ".");
+        double augums = Double.parseDouble(augums_str);
+
+        System.out.print("Vai jūms patīk programmēt? (jā/nē): " );
+        String atbilde = scan.next();
+        boolean patik_programmet = atbilde.equalsIgnoreCase("jā");
+
+        // Vienkaršie aprēķini
+        int vecums_dienas = vecums* 365;
+        double augums_cm = augums* 100;
+
+        // Izvade konsole
+        System.out.println("\nInformācija par mani:");
+        System.out.println("Vārds: " + vards);
+        System.out.println("Vecums: " + vecums + " gadi ");
+        System.out.println("Vecums dienas: " + vecums_dienas + " dienas ");
+        System.out.println("Augums: " + augums + " metri ");
+        System.out.println("Augums centimetros: " + augums_cm + " cm ");
+        System.out.println("Vai patīk programmēt?:" + (patik_programmet? " jā ":" nē "));
+
+        // Aizveru scan objektu
+        scan.close();
